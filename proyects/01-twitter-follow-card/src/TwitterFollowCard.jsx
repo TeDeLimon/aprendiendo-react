@@ -1,6 +1,6 @@
 import { useState } from 'react'
 // Los hooks son funciones que nos permiten usar características para dotar de funcionalidad a los componente
-// useState nos va a servir para cointrolar el estado del componente
+// useState nos va a servir para controlar el estado del componente
 // useState nos devuelve un array con dos elementos, el primero es el estado y el segundo es una función que nos permite cambiar el estado
 // useState recibe un argumento que es el valor inicial del estado
 

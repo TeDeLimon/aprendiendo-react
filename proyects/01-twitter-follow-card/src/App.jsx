@@ -22,17 +22,20 @@ const users = [
   {
     userName: 'midudev',
     name: 'Miguel Ángel Durán',
-    isFollowing: true
+    isFollowing: true,
+    id: 2786223
   },
   {
     userName: 'TeDeLimon',
     name: 'Luis Villanueva',
-    isFollowing: false
+    isFollowing: false,
+    id: 2786252
   },
   {
     userName: 'Vanderhart',
     name: 'Vanderhart',
-    isFollowing: true
+    isFollowing: true,
+    id: 2786232
   }
 ]
 
@@ -44,17 +47,21 @@ export function App() {
 
   // La key es un atributo especial que se usa para identificar de forma única a cada elemento en un array
 
+  const componentesUsuario = users.map(({ id, userName, name, isFollowing }) => {
+    return (
+      <TwitterFollowCard
+        key={id}
+        userName={userName}
+        initialIsFollowing={isFollowing}
+      >
+        {name}
+      </TwitterFollowCard>
+    )
+  })
+
   return (
-    <section className='App'>
-      {users.map(({ userName, name, isFollowing }) =>
-        <TwitterFollowCard
-          key={userName}
-          userName={userName}
-          initialIsFollowing={isFollowing}
-        >
-          {name}
-        </TwitterFollowCard>
-      )}
+    <section className="App">
+      {componentesUsuario}
     </section>
   )
 }
